@@ -1,24 +1,27 @@
 import React from 'react'
-import { StyleSheet, Text, View, Image } from 'react-native';
+import { StyleSheet, Text, View, Image, TouchableOpacity } from 'react-native';
 import { MaterialIcons } from "@expo/vector-icons";
+import { NavigationContainer } from '@react-navigation/native';
 
-const Card = () => {
+const Card = ({ navigation }) => {
   return (
-    <View style={styles.card}>
-      <View style={styles.imageWrapper}>
-        <Image
-          source={require("../../assets/news-dice.jpeg")}
-          style={styles.image}
-        />
+    <TouchableOpacity onPress={() => navigation.navigate('NewsDetails')}>
+      <View style={styles.card}>
+        <View style={styles.imageWrapper}>
+          <Image
+            source={require("../../assets/news-dice.jpeg")}
+            style={styles.image}
+          />
+        </View>
+        <View style={styles.titleWrapper}>
+          <Text style={styles.title}>Dummy Title</Text>
+          <MaterialIcons name="favorite-border" size={24} color="#72bcd4" />
+        </View>
+        <View style={styles.descriptionWrapper}>
+          <Text style={styles.description}>Dummy Description</Text>
+        </View>
       </View>
-      <View style={styles.titleWrapper}>
-        <Text style={styles.title}>Dummy Title</Text>
-        <MaterialIcons name="favorite-border" size={24} color="#72bcd4" />
-      </View>
-      <View style={styles.descriptionWrapper}>
-        <Text style={styles.description}>Dummy Description</Text>
-      </View>
-    </View>
+    </TouchableOpacity>
   );
 }
 

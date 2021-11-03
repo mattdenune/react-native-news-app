@@ -3,7 +3,7 @@ import { StyleSheet, Text, View } from 'react-native'
 
 const NewsDetailScreen = () => {
   return (
-    <View>
+    <View style={{flex: 1}}>
       <Text>News Details</Text>
     </View>
   )

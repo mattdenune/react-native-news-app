@@ -1,13 +1,12 @@
 import React from 'react'
-import { StyleSheet, Text, View } from 'react-native'
+import { StyleSheet } from 'react-native'
 
 import Card from '../components/Card';
 
-const NewsListScreen = () => {
+const NewsListScreen = ({ navigation }) => {
+
   return (
-    <View>
-      <Card />
-    </View>
+      <Card navigation={navigation} />
   );
 };
 
