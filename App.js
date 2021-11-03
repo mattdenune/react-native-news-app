@@ -3,8 +3,7 @@ import { StyleSheet, Text, View } from 'react-native';
 import * as Font from 'expo-font';
 import  AppLoading  from "expo-app-loading";
 
-import Header from './src/components/Header';
-import Card from './src/components/Card';
+import NewsListScreen from './src/screens/NewsListScreen';
 
 const loadFonts = () => {
   return Font.loadAsync({
@@ -28,8 +27,7 @@ export default function App() {
 
   return (
     <View >
-      <Header />
-      <Card />
+      <NewsListScreen />
     </View>
   );
 }
