@@ -1,21 +1,21 @@
 import React from 'react';
-import { NavigationContainer } from '@react-navigation/native';;
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator } from "@react-navigation/stack";
 
 import NewsListScreen from '../screens/NewsListScreen';
 import NewsDetailScreen from '../screens/NewsDetailScreen';
 
-const Stack = createNativeStackNavigator();
+const Stack = createStackNavigator();
 
-function AppNavigator() {
+const AppNavigator = () => {
   return (
     <NavigationContainer>
-      <Stack.Navigator>
-        <Stack.Screen name='NewsList' component={NewsListScreen} />
-        <Stack.Screen name='NewsDetails' component={NewsDetailScreen} />
+      <Stack.Navigator initialRouteName="NewsList" >
+        <Stack.Screen name="NewsList" component={NewsListScreen} />
+        <Stack.Screen name="NewsDetails" component={NewsDetailScreen} />
       </Stack.Navigator>
     </NavigationContainer>
-  )
+  );
 }
 
 export default AppNavigator;
