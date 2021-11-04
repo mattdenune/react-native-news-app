@@ -2,8 +2,10 @@ import React, { useState } from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import * as Font from 'expo-font';
 import  AppLoading  from "expo-app-loading";
+import { Provider } from 'react-redux';
 
 import AppNavigator from './src/navigation/AppNavigator';
+import store from './src/redux/store';
 
 
 
@@ -28,9 +30,11 @@ export default function App() {
   };
 
   return (
-    <View style={styles.container}>
-      <AppNavigator />
-    </View>
+    <Provider store={store} >
+      <View style={styles.container}>
+        <AppNavigator />
+      </View>
+    </Provider>
   );
 }
 
