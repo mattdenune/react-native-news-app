@@ -24,16 +24,13 @@ const HeaderLeft = () => {
 
 function HomeNavigator() {
   return (
-    <Stack.Navigator
-      screenOptions={{
-        headerLeft: () => <HeaderLeft/>
-      }}
-    >
+    <Stack.Navigator >
       <Stack.Screen
         name="NewsList"
         component={NewsListScreen}
         options={{
           title: "All News",
+          headerLeft: () => <HeaderLeft/>
         }}
       />
       <Stack.Screen

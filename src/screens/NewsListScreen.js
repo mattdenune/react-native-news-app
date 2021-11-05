@@ -15,7 +15,6 @@ const NewsListScreen = ({ navigation }) => {
   },[dispatch])
 
   const { articles } = useSelector(state => state.news.articles)
-  console.log("🚀 ~ file: NewsListScreen.js ~ line 17 ~ NewsListScreen ~ articles", articles)
 
   return (
     <FlatList
@@ -27,6 +26,7 @@ const NewsListScreen = ({ navigation }) => {
           title={item.title}
           image={item.urlToImage}
           description={item.description}
+          url={item.url}
         />
       )}
     />
